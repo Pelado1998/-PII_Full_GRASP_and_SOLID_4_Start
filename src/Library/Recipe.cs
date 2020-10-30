@@ -15,8 +15,10 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
-        public void AddStep(Step step)
+        // Agregado por Creator, como Recipe agerga instancias de Step, se crean dentro del metodo que las agrega.
+        public void AddStep(Product product, double quantity, Equipment equipment, int time)
         {
+            Step step = new Step (product, quantity, equipment, time);
             this.steps.Add(step);
         }
 
@@ -52,5 +54,6 @@ namespace Full_GRASP_And_SOLID
 
             return result;
         }
+
     }
 }
